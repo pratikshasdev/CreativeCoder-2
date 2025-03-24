@@ -12,62 +12,62 @@ interface Project {
 export const projects: Project[] = [
   {
     id: 1,
-    title: "E-commerce Redesign",
-    description: "A complete redesign of an e-commerce platform focusing on improving the user journey and increasing conversion rates.",
+    title: "DQS Direct Mobile App",
+    description: "Led the development of a job-seeking app enabling users to swipe through job listings, upload resumes, and apply for positions, resulting in 50% increase in engagement and 30% faster application process.",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
-    categories: ["ux-design", "ui-design"],
-    categoryLabel: "UX/UI Design",
-    technologies: ["Figma", "Shopify", "User Testing"],
-    link: "https://example.com/project1"
+    categories: ["mobile-dev", "ui-design"],
+    categoryLabel: "Mobile Development",
+    technologies: ["React Native", "Redux", "TypeScript", "NestJS", "Azure"],
+    link: "https://github.com/pratiksha-shirsath"
   },
   {
     id: 2,
-    title: "Banking Dashboard",
-    description: "A responsive dashboard for a financial institution with real-time data visualization and secure authentication.",
+    title: "Collaborative Care Android App",
+    description: "Created an app revolutionizing behavioral and mental health care, featuring AES-256 encrypted messaging, WebSockets for real-time updates, and Firebase Cloud Messaging for medication reminders.",
     image: "https://images.unsplash.com/photo-1517433456452-f9633a875f6f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
-    categories: ["development"],
-    categoryLabel: "Development",
-    technologies: ["React", "D3.js", "Firebase"],
-    link: "https://example.com/project2"
+    categories: ["mobile-dev"],
+    categoryLabel: "Mobile Development",
+    technologies: ["Flutter", "Dart", "Android", "Java", "Firebase", "WebSockets"],
+    link: "https://github.com/pratiksha-shirsath"
   },
   {
     id: 3,
-    title: "Fitness Tracker App",
-    description: "A mobile application for tracking workouts, nutrition, and progress with customizable goals and social features.",
+    title: "AI Institute Web App",
+    description: "Led the design of a React.js frontend for The National AI Institute for Exceptional Education, improving accessibility by 40% for users with speech disabilities through enhanced phoneme support.",
     image: "https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
     categories: ["ui-design", "development"],
-    categoryLabel: "UI Design & Dev",
-    technologies: ["React Native", "Redux", "Node.js"],
-    link: "https://example.com/project3"
+    categoryLabel: "Frontend Development",
+    technologies: ["React.js", "Next.js", "FastAPI", "Python", "Solr"],
+    link: "https://github.com/pratiksha-shirsath"
   },
   {
     id: 4,
-    title: "Travel Planner",
-    description: "A comprehensive UX research and design project for a travel planning platform that simplifies trip organization.",
+    title: "Personalized Travel Itinerary Planner",
+    description: "Built an iOS app using AI to generate personalized travel itineraries based on user preferences, enhancing trip planning efficiency with a user-friendly interface.",
     image: "https://images.unsplash.com/photo-1593720213428-28a5b9e94613?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
-    categories: ["ux-design"],
-    categoryLabel: "UX Design",
-    technologies: ["User Research", "Wireframing", "Prototyping"],
-    link: "https://example.com/project4"
+    categories: ["mobile-dev", "ui-design"],
+    categoryLabel: "iOS Development",
+    technologies: ["Swift", "UIKit", "MongoDB", "AI Integration"],
+    link: "https://github.com/pratiksha-shirsath"
   },
   {
     id: 5,
-    title: "Weather App",
-    description: "A beautifully designed weather application with location-based forecasts, animated weather conditions, and alerts.",
+    title: "Fitness Tracker App",
+    description: "Developed a mobile app to track workouts, set fitness goals, and analyze progress, improving user engagement in achieving health goals with a clean, intuitive interface.",
     image: "https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
-    categories: ["development"],
-    categoryLabel: "Development",
-    technologies: ["JavaScript", "SVG Animation", "API Integration"],
-    link: "https://example.com/project5"
+    categories: ["mobile-dev", "development"],
+    categoryLabel: "Android Development",
+    technologies: ["Kotlin", "MongoDB", "Dagger", "Hilt", "Coroutines"],
+    link: "https://github.com/pratiksha-shirsath"
   },
   {
     id: 6,
-    title: "Music Streaming App",
-    description: "A modern music streaming platform with personalized recommendations, dynamic playlists, and social sharing.",
+    title: "Slice of Heaven Loyalty App",
+    description: "Developed a loyalty app for a food chain, increasing customer retention by 35% through a points-based rewards system and integrated Google's Messaging API for in-app chat features.",
     image: "https://images.unsplash.com/photo-1543286386-2e659306cd6c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
-    categories: ["ui-design", "development"],
-    categoryLabel: "UI Design & Dev",
-    technologies: ["Vue.js", "Web Audio API", "Scss"],
-    link: "https://example.com/project6"
+    categories: ["mobile-dev", "ui-design"],
+    categoryLabel: "Mobile Development",
+    technologies: ["Flutter", "Dart", "Firebase", "Provider", "Figma"],
+    link: "https://github.com/pratiksha-shirsath"
   }
 ];
