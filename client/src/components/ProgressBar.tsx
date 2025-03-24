@@ -10,10 +10,13 @@ const ProgressBar = ({ percentage }: ProgressBarProps) => {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <div className="progress-bar" ref={ref} style={{ "--progress": `${percentage}%` } as React.CSSProperties}>
+    <div 
+      className="w-full h-2 bg-[var(--grey-medium)] rounded-full overflow-hidden" 
+      ref={ref}
+    >
       {isInView && (
         <motion.div
-          className="h-full bg-primary rounded-lg"
+          className="h-full bg-gradient-to-r from-[var(--blue-primary)] to-[var(--yellow-accent)] rounded-lg"
           initial={{ width: 0 }}
           animate={{ width: `${percentage}%` }}
           transition={{ duration: 1.5, ease: "easeOut" }}
