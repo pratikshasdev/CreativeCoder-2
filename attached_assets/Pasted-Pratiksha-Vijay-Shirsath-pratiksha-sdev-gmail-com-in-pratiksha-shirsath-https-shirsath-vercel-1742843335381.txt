@@ -1,0 +1,49 @@
+Pratiksha Vijay Shirsath
+pratiksha.sdev@gmail.com | /in/pratiksha-shirsath | https://shirsath.vercel.app/
+SUMMARY
+Masters in Computer Science with 3+ Years of Experience in Mobile Application Development, demonstrating strong mentoring and leadership skills. Specialized in optimization and UX skills, proficiency in React Native, Flutter, Java, Swift with exceptional analytical abilities and problem-solving skills.
+PROFESSIONAL EXPERIENCE
+Mobile Application Developer	May 2024 - Present
+Detroit Quality Staffing and Solutions - Detroit, MI
+Led the development of the DQS Direct iOS and Android mobile app using React Native, enabling job-seekers to easily swipe through job listings, upload resumes, and apply for positions resulting in a 50% increase in job-seeker engagement and a 30% faster application process.
+Architected and manage the backend with NestJS on Azure, ensuring a scalable, secure, and high-performance server-side
+solution, while utilizing Git and Azure DevOps for version control and collaboration and Figma for design.
+Improved code quality and maintainability through ESLint integration and utilized essential React Native packages such as
+Redux for state management and Axios for 15% faster data handling.
+Tech Stack: React Native, Redux, ESLint, JavaScript, TypeScript, NestJS, CI/CD, Azure, REST APIs, Git, UI/UX, MVVM.
+Android Developer	July 2023 - July 2024
+The Research Foundation SUNY - Buffalo, NY
+Collaborated with Dr. Yu-Ping Chang, UB School of Nursing, to create the Collaborative Care Android app independently, revolutionizing behavioral and mental health care for patients.
+Implemented in-app messaging with AES-256 encryption, ensuring safe and private chats between patients and providers.
+Integrated real-time updates using WebSockets, enabling instant synchronization of patient-provider interactions and enhancing responsiveness for critical health updates.
+Implemented push notifications for medication reminders and Daily Check-In, leveraging Firebase Cloud Messaging to engage
+users.
+Tech Stack: Flutter, Dart, Android, Java, Git, UI/UX, MVC, Firebase, WebSockets, GraphQL, REST APIs.
+Research Assistant	August 2023 - December 2023
+University At Buffalo - Buffalo, NY
+Led the design of a React.js Web Front-end, improving accessibility by 40% for The National AI Institute for Exceptional Education through enhanced phoneme support for users with speech disabilities
+Implemented client integration endpoints for live API access and data processing, alongside curating a database of 250k+
+words with articulation information.
+Optimized advanced search functionalities using Solr, accessible through the Front-end with the help of FastAPI, allowing users to perform complex queries with instant feedback.
+Improved debugging efficiency by 30% through the implementation of automated testing scripts using Python.
+Tech Stack: FastAPI, Python3, HTML, CSS, JavaScript, React.js, Next.js, Solr, Kubernetes, Docker, GitHub.
+Mobile App Developer	May 2021 - June 2022
+Persistent Systems, Inc. - Pune, India
+Developed Slice of Heaven, a loyalty app for a food chain, increasing customer retention by 35% through a points-based rewards system.
+Engineered an optimized state management solution using Flutter’s Provider package, resulting in a 40% decrease in app
+crashes and improved user experience.
+Integrated Google’s Messaging API for in-app chat features, boosting user engagement and support communication.
+Tech Stack: Flutter, Dart, Firebase Cloud Firestore, Social Media APIs, Provider, Figma.
+EDUCATION
+University at Buffalo, The State University of New York	Buffalo, NY
+Master of Science, Computer Science and Engineering	August 2022 - January 2024
+TECHNICAL SKILLS
+Languages and Technologies: React.js,Angular, TypeScript, Dart, Swift, Express.js, Node.js, JavaScript, SQL, jQuery
+Frameworks and Platforms:	React Native, Flask, Apache Solr, Flutter, Firebase
+Tools:	Git, Google Cloud Platform(GCP), Android Studio, Visual Studio Code, Xcode, Postman, Docker, Kubernetes, Trello, Jira, Jest
+
+Databases:	PostgreSQL, MongoDB, Cloud Firestore, SQLite, MySQL, Lambda, AzurePROJECTS
+Fitness Tracker App | Kotlin, Dagger, MongoDB, Glide, Hilt, Coroutines, GitHub
+Developed a mobile app to track workouts, set fitness goals, and analyze progress, improving user engagement in achieving health goals
+Personalized Travel Itinerary Planner iOS App | Swift, UIKit, MongoDB
+Built an app using AI to generate personalized travel itineraries based on user preferences, enhancing trip planning efficiency

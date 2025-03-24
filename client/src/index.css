@@ -3,11 +3,36 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --blue-primary: #007BFF;
+    --blue-secondary: #0056b3;
+    --yellow-accent: #FFD700;
+    --yellow-secondary: #FFC107;
+    --grey-light: #f5f5f5;
+    --grey-medium: #e0e0e0;
+    --grey-dark: #333333;
+  }
+
   * {
     @apply border-border;
   }
 
   body {
     @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .floating {
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+
+  @keyframes floating {
+    0% { transform: translate(0, 0px); }
+    50% { transform: translate(0, 15px); }
+    100% { transform: translate(0, 0px); }
   }
 }
