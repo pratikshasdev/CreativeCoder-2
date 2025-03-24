@@ -9,7 +9,7 @@ export default function Footer() {
             <Link href="/" className="text-xl font-bold font-poppins text-[var(--blue-primary)] cursor-link">
               Pratiksha<span className="text-[var(--yellow-accent)]">.</span>Shirsath
             </Link>
-            <p className="text-[var(--grey-dark)] text-sm mt-2">Mobile Application Developer</p>
+            <p className="text-[var(--grey-dark)] text-sm mt-2">Software & Frontend Developer • Mobile Developer</p>
           </div>
           
           <div className="flex items-center">

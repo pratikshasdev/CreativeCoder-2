@@ -30,7 +30,15 @@ export default function Hero() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.8 }}
             >
-              Mobile Application Developer
+              Software & Frontend Developer
+            </motion.span>
+            <motion.span 
+              className="block text-[var(--yellow-accent)] text-3xl md:text-4xl mt-2"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.8, duration: 0.8 }}
+            >
+              Mobile Developer
             </motion.span>
           </h1>
           <p className="text-[var(--grey-dark)] text-lg mb-8 max-w-lg">
