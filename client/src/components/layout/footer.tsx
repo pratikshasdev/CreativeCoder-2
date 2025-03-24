@@ -2,21 +2,21 @@ import { Link } from 'wouter';
 
 export default function Footer() {
   return (
-    <footer className="py-8 border-t border-gray-100">
+    <footer className="py-8 border-t border-[var(--grey-light)]">
       <div className="container mx-auto px-6 md:px-10">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
-            <Link href="/" className="text-xl font-bold font-poppins text-primary cursor-link">
-              Jane<span className="text-secondary">.</span>Doe
+            <Link href="/" className="text-xl font-bold font-poppins text-[var(--blue-primary)] cursor-link">
+              Pratiksha<span className="text-[var(--yellow-accent)]">.</span>Shirsath
             </Link>
-            <p className="text-gray-600 text-sm mt-2">UI/UX Designer & Frontend Developer</p>
+            <p className="text-[var(--grey-dark)] text-sm mt-2">Mobile Application Developer</p>
           </div>
           
           <div className="flex items-center">
-            <p className="text-gray-600 mr-4">Download my resume:</p>
+            <p className="text-[var(--grey-dark)] mr-4">Download my resume:</p>
             <a 
-              href="/resume.pdf" 
-              className="btn-hover-effect inline-flex items-center bg-gray-800 text-white px-6 py-2 rounded-full shadow-md hover:shadow-lg transition-all cursor-link"
+              href="https://drive.google.com/file/d/1U8TUuF__W334d08MdMQGvtSIb2j5UeE2/view?usp=sharing" 
+              className="btn-hover-effect inline-flex items-center bg-[var(--blue-primary)] text-white px-6 py-2 rounded-full shadow-md hover:shadow-lg transition-all cursor-link"
               target="_blank" 
               rel="noopener noreferrer"
             >
@@ -25,8 +25,8 @@ export default function Footer() {
           </div>
         </div>
         
-        <div className="mt-8 pt-8 border-t border-gray-100 text-center text-gray-500 text-sm">
-          <p>&copy; {new Date().getFullYear()} Jane Doe. All rights reserved.</p>
+        <div className="mt-8 pt-8 border-t border-[var(--grey-light)] text-center text-[var(--grey-dark)] text-sm">
+          <p>&copy; {new Date().getFullYear()} Pratiksha Shirsath. All rights reserved.</p>
         </div>
       </div>
     </footer>

@@ -1,5 +1,15 @@
 import { motion } from 'framer-motion';
-import { smoothScrollTo } from '@/lib/utils';
+
+// Define the smoothScrollTo function locally since it's missing from utils
+const smoothScrollTo = (id: string) => {
+  const element = document.getElementById(id);
+  if (element) {
+    window.scrollTo({
+      top: element.offsetTop - 80, // Adjust for header height
+      behavior: 'smooth'
+    });
+  }
+};
 
 export default function Hero() {
   return (

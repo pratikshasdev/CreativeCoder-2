@@ -1,7 +1,17 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'wouter';
 import { motion } from 'framer-motion';
-import { smoothScrollTo } from '@/lib/utils';
+
+// Define the smoothScrollTo function locally since it's missing from utils
+const smoothScrollTo = (id: string) => {
+  const element = document.getElementById(id);
+  if (element) {
+    window.scrollTo({
+      top: element.offsetTop - 80, // Adjust for header height
+      behavior: 'smooth'
+    });
+  }
+};
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -32,15 +42,15 @@ export default function Header() {
   };
   
   return (
-    <header className={`fixed top-0 left-0 w-full bg-white bg-opacity-90 backdrop-blur-sm z-40 transition-all duration-300 border-b border-gray-100 ${isScrolled ? 'shadow-md h-[70px]' : 'h-auto'}`}>
+    <header className={`fixed top-0 left-0 w-full bg-white bg-opacity-90 backdrop-blur-sm z-40 transition-all duration-300 border-b border-[var(--grey-light)] ${isScrolled ? 'shadow-md h-[70px]' : 'h-auto'}`}>
       <div className="container mx-auto px-6 md:px-10 py-4 flex justify-between items-center">
-        <Link href="/" className="text-xl font-bold font-poppins text-primary cursor-link">
-          Jane<span className="text-secondary">.</span>Doe
+        <Link href="/" className="text-xl font-bold font-poppins text-[var(--blue-primary)] cursor-link">
+          Pratiksha<span className="text-[var(--yellow-accent)]">.</span>Shirsath
         </Link>
         
         {/* Mobile menu button */}
         <button 
-          className="md:hidden text-gray-800 focus:outline-none cursor-link" 
+          className="md:hidden text-[var(--grey-dark)] focus:outline-none cursor-link" 
           onClick={toggleMenu}
         >
           <i className='bx bx-menu text-3xl'></i>
@@ -50,7 +60,7 @@ export default function Header() {
         <nav className="hidden md:flex items-center space-x-8">
           <a 
             href="#about" 
-            className="nav-link text-gray-600 hover:text-primary transition-colors cursor-link"
+            className="nav-link text-[var(--grey-dark)] hover:text-[var(--blue-primary)] transition-colors cursor-link"
             onClick={(e) => {
               e.preventDefault();
               scrollToSection('about');
@@ -60,7 +70,7 @@ export default function Header() {
           </a>
           <a 
             href="#skills" 
-            className="nav-link text-gray-600 hover:text-primary transition-colors cursor-link"
+            className="nav-link text-[var(--grey-dark)] hover:text-[var(--blue-primary)] transition-colors cursor-link"
             onClick={(e) => {
               e.preventDefault();
               scrollToSection('skills');
@@ -70,7 +80,7 @@ export default function Header() {
           </a>
           <a 
             href="#projects" 
-            className="nav-link text-gray-600 hover:text-primary transition-colors cursor-link"
+            className="nav-link text-[var(--grey-dark)] hover:text-[var(--blue-primary)] transition-colors cursor-link"
             onClick={(e) => {
               e.preventDefault();
               scrollToSection('projects');
@@ -80,7 +90,7 @@ export default function Header() {
           </a>
           <a 
             href="#contact" 
-            className="nav-link text-gray-600 hover:text-primary transition-colors cursor-link"
+            className="nav-link text-[var(--grey-dark)] hover:text-[var(--blue-primary)] transition-colors cursor-link"
             onClick={(e) => {
               e.preventDefault();
               scrollToSection('contact');
@@ -89,8 +99,8 @@ export default function Header() {
             Contact
           </a>
           <a 
-            href="/resume.pdf" 
-            className="nav-link btn-hover-effect bg-primary text-white px-6 py-2 rounded-full shadow-lg hover:shadow-xl transition-all cursor-link"
+            href="https://drive.google.com/file/d/1U8TUuF__W334d08MdMQGvtSIb2j5UeE2/view?usp=sharing" 
+            className="nav-link btn-hover-effect bg-[var(--blue-primary)] text-white px-6 py-2 rounded-full shadow-lg hover:shadow-xl transition-all cursor-link"
             target="_blank" 
             rel="noopener noreferrer"
           >
@@ -115,7 +125,7 @@ export default function Header() {
         </button>
         <a 
           href="#about" 
-          className="mobile-nav-link text-gray-800 hover:text-primary transition-colors"
+          className="mobile-nav-link text-[var(--grey-dark)] hover:text-[var(--blue-primary)] transition-colors"
           onClick={(e) => {
             e.preventDefault();
             scrollToSection('about');
@@ -125,7 +135,7 @@ export default function Header() {
         </a>
         <a 
           href="#skills" 
-          className="mobile-nav-link text-gray-800 hover:text-primary transition-colors"
+          className="mobile-nav-link text-[var(--grey-dark)] hover:text-[var(--blue-primary)] transition-colors"
           onClick={(e) => {
             e.preventDefault();
             scrollToSection('skills');
@@ -135,7 +145,7 @@ export default function Header() {
         </a>
         <a 
           href="#projects" 
-          className="mobile-nav-link text-gray-800 hover:text-primary transition-colors"
+          className="mobile-nav-link text-[var(--grey-dark)] hover:text-[var(--blue-primary)] transition-colors"
           onClick={(e) => {
             e.preventDefault();
             scrollToSection('projects');
@@ -145,7 +155,7 @@ export default function Header() {
         </a>
         <a 
           href="#contact" 
-          className="mobile-nav-link text-gray-800 hover:text-primary transition-colors"
+          className="mobile-nav-link text-[var(--grey-dark)] hover:text-[var(--blue-primary)] transition-colors"
           onClick={(e) => {
             e.preventDefault();
             scrollToSection('contact');
@@ -154,8 +164,8 @@ export default function Header() {
           Contact
         </a>
         <a 
-          href="/resume.pdf" 
-          className="mobile-nav-link bg-primary text-white px-8 py-3 rounded-full"
+          href="https://drive.google.com/file/d/1U8TUuF__W334d08MdMQGvtSIb2j5UeE2/view?usp=sharing" 
+          className="mobile-nav-link bg-[var(--blue-primary)] text-white px-8 py-3 rounded-full"
           target="_blank" 
           rel="noopener noreferrer"
         >
