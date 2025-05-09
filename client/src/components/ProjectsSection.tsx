@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { projects } from "@/data/projects";
 
@@ -8,6 +8,154 @@ const categories = [
   { id: "ui-design", name: "UI Design" },
   { id: "development", name: "Development" }
 ];
+
+const ProjectCard = ({ project }) => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const carouselRef = useRef(null);
+
+  const hasMultipleImages = project.images && project.images.length > 1;
+  
+  const nextImage = () => {
+    if (!hasMultipleImages) return;
+    setCurrentImageIndex((prev) => 
+      prev === project.images.length - 1 ? 0 : prev + 1
+    );
+    scrollToImage(currentImageIndex + 1 === project.images.length ? 0 : currentImageIndex + 1);
+  };
+
+  const prevImage = () => {
+    if (!hasMultipleImages) return;
+    setCurrentImageIndex((prev) => 
+      prev === 0 ? project.images.length - 1 : prev - 1
+    );
+    scrollToImage(currentImageIndex - 1 < 0 ? project.images.length - 1 : currentImageIndex - 1);
+  };
+
+  const scrollToImage = (index) => {
+    if (carouselRef.current) {
+      const scrollAmount = carouselRef.current.offsetWidth * index;
+      carouselRef.current.scrollTo({
+        left: scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const handleDotClick = (index) => {
+    setCurrentImageIndex(index);
+    scrollToImage(index);
+  };
+  
+  return (
+    <motion.div
+      layout
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0.9 }}
+      transition={{ duration: 0.3 }}
+      className="project-card rounded-xl overflow-hidden shadow-md hover:shadow-xl bg-white"
+    >
+      <div className="relative overflow-hidden h-64">
+        {/* Project image carousel */}
+        <div className="w-full h-full relative">
+          {project.images && project.images.length > 0 ? (
+            <>
+              <div 
+                ref={carouselRef}
+                className="w-full h-full overflow-x-auto scrollbar-hide flex snap-x snap-mandatory"
+                onScroll={(e) => {
+                  if (carouselRef.current) {
+                    const scrollLeft = e.currentTarget.scrollLeft;
+                    const itemWidth = e.currentTarget.offsetWidth;
+                    const newIndex = Math.round(scrollLeft / itemWidth);
+                    if (newIndex !== currentImageIndex) {
+                      setCurrentImageIndex(newIndex);
+                    }
+                  }
+                }}
+              >
+                {project.images.map((img, imgIndex) => (
+                  <div key={imgIndex} className="min-w-full h-full flex-shrink-0 snap-center">
+                    <img
+                      src={img}
+                      alt={`${project.title} - image ${imgIndex + 1}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                ))}
+              </div>
+              
+              {/* Image navigation controls */}
+              {hasMultipleImages && (
+                <>
+                  {/* Navigation arrows */}
+                  <button 
+                    onClick={prevImage}
+                    className="absolute left-2 top-1/2 -translate-y-1/2 bg-white bg-opacity-70 rounded-full w-8 h-8 flex items-center justify-center text-gray-800 hover:bg-opacity-100"
+                    aria-label="Previous image"
+                  >
+                    ←
+                  </button>
+                  <button 
+                    onClick={nextImage}
+                    className="absolute right-2 top-1/2 -translate-y-1/2 bg-white bg-opacity-70 rounded-full w-8 h-8 flex items-center justify-center text-gray-800 hover:bg-opacity-100"
+                    aria-label="Next image"
+                  >
+                    →
+                  </button>
+                  
+                  {/* Image navigation indicators */}
+                  <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-1">
+                    {project.images.map((_, imgIndex) => (
+                      <button 
+                        key={imgIndex}
+                        onClick={() => handleDotClick(imgIndex)}
+                        className={`w-2 h-2 rounded-full ${
+                          currentImageIndex === imgIndex 
+                            ? 'bg-[var(--blue-primary)]' 
+                            : 'bg-white bg-opacity-70'
+                        }`}
+                        aria-label={`Go to image ${imgIndex + 1}`}
+                      />
+                    ))}
+                  </div>
+                </>
+              )}
+            </>
+          ) : (
+            <img
+              src={project.image}
+              alt={project.title}
+              className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            />
+          )}
+        </div>
+        <div className="absolute top-4 right-4 bg-white rounded-full px-3 py-1 text-xs font-medium text-primary">
+          {project.categoryLabel}
+        </div>
+      </div>
+      <div className="p-6">
+        <h3 className="text-xl font-bold font-poppins mb-2">{project.title}</h3>
+        <p className="text-gray-600 mb-4">{project.description}</p>
+        <div className="flex flex-wrap gap-2 mb-6">
+          {project.technologies.map((tech, index) => (
+            <span key={index} className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">
+              {tech}
+            </span>
+          ))}
+        </div>
+        <a 
+          href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary font-medium inline-flex items-center hover:underline"
+        >
+          View Project <i className="ri-arrow-right-line ml-1"></i>
+        </a>
+      </div>
+    </motion.div>
+  );
+};
 
 const ProjectsSection = () => {
   const [activeCategory, setActiveCategory] = useState("all");
@@ -54,75 +202,7 @@ const ProjectsSection = () => {
         <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <AnimatePresence>
             {filteredProjects.map((project) => (
-              <motion.div
-                key={project.id}
-                layout
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.3 }}
-                className="project-card rounded-xl overflow-hidden shadow-md hover:shadow-xl bg-white"
-              >
-                <div className="relative overflow-hidden h-64">
-                  {/* Project image carousel */}
-                  <div className="w-full h-full relative">
-                    {project.images && project.images.length > 0 ? (
-                      <>
-                        <div className="w-full h-full overflow-x-auto scrollbar-hide flex snap-x snap-mandatory">
-                          {project.images.map((img, imgIndex) => (
-                            <div key={imgIndex} className="min-w-full h-full flex-shrink-0 snap-center">
-                              <img
-                                src={img}
-                                alt={`${project.title} - image ${imgIndex + 1}`}
-                                className="w-full h-full object-cover"
-                              />
-                            </div>
-                          ))}
-                        </div>
-                        {/* Image navigation indicators */}
-                        {project.images.length > 1 && (
-                          <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-1">
-                            {project.images.map((_, imgIndex) => (
-                              <span 
-                                key={imgIndex}
-                                className="w-2 h-2 rounded-full bg-white bg-opacity-70"
-                              />
-                            ))}
-                          </div>
-                        )}
-                      </>
-                    ) : (
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                      />
-                    )}
-                  </div>
-                  <div className="absolute top-4 right-4 bg-white rounded-full px-3 py-1 text-xs font-medium text-primary">
-                    {project.categoryLabel}
-                  </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold font-poppins mb-2">{project.title}</h3>
-                  <p className="text-gray-600 mb-4">{project.description}</p>
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.technologies.map((tech, index) => (
-                      <span key={index} className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  <a 
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary font-medium inline-flex items-center hover:underline"
-                  >
-                    View Project <i className="ri-arrow-right-line ml-1"></i>
-                  </a>
-                </div>
-              </motion.div>
+              <ProjectCard key={project.id} project={project} />
             ))}
           </AnimatePresence>
         </motion.div>
