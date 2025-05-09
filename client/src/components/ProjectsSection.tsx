@@ -64,11 +64,41 @@ const ProjectsSection = () => {
                 className="project-card rounded-xl overflow-hidden shadow-md hover:shadow-xl bg-white"
               >
                 <div className="relative overflow-hidden h-64">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                  />
+                  {/* Project image carousel */}
+                  <div className="w-full h-full relative">
+                    {project.images && project.images.length > 0 ? (
+                      <>
+                        <div className="w-full h-full overflow-x-auto scrollbar-hide flex snap-x snap-mandatory">
+                          {project.images.map((img, imgIndex) => (
+                            <div key={imgIndex} className="min-w-full h-full flex-shrink-0 snap-center">
+                              <img
+                                src={img}
+                                alt={`${project.title} - image ${imgIndex + 1}`}
+                                className="w-full h-full object-cover"
+                              />
+                            </div>
+                          ))}
+                        </div>
+                        {/* Image navigation indicators */}
+                        {project.images.length > 1 && (
+                          <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-1">
+                            {project.images.map((_, imgIndex) => (
+                              <span 
+                                key={imgIndex}
+                                className="w-2 h-2 rounded-full bg-white bg-opacity-70"
+                              />
+                            ))}
+                          </div>
+                        )}
+                      </>
+                    ) : (
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                      />
+                    )}
+                  </div>
                   <div className="absolute top-4 right-4 bg-white rounded-full px-3 py-1 text-xs font-medium text-primary">
                     {project.categoryLabel}
                   </div>
