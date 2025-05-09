@@ -9,46 +9,31 @@ export default function Projects() {
   const [projects] = useState<Project[]>([
     {
       id: '1',
-      title: 'DQS Direct Mobile App',
-      description: 'Led the development of a job-seeking app enabling users to swipe through job listings, upload resumes, and apply for positions, resulting in 50% increase in engagement.',
-      imageUrl: 'https://res.cloudinary.com/dsthkuuxz/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1746813349/Screenshot_2025-05-09_at_1.55.16_PM_wesrgh.png',
-      images: [
-        'https://res.cloudinary.com/dsthkuuxz/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1746813349/Screenshot_2025-05-09_at_1.55.16_PM_wesrgh.png',
-        'https://res.cloudinary.com/dsthkuuxz/image/upload/v1746813394/Screenshot_2025-05-09_at_1.55.33_PM_qbxlzj.png',
-        'https://res.cloudinary.com/dsthkuuxz/image/upload/v1746813427/Screenshot_2025-05-09_at_1.56.58_PM_d0kkty.png'
-      ],
+      title: 'E-commerce Dashboard',
+      description: 'A responsive admin dashboard for e-commerce platforms with analytics, inventory management, and order processing.',
+      imageUrl: 'https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
       category: ['ui-ux', 'frontend'],
-      technologies: ['React Native', 'Redux', 'TypeScript', 'NestJS', 'Azure'],
-      completionLevel: 3,
-      link: 'https://apps.apple.com/no/app/dqs-direct/id6446716583'
+      technologies: ['React', 'TypeScript', 'Tailwind CSS'],
+      completionLevel: 1,
+      link: '/project/1'
     },
     {
       id: '2',
-      title: 'Collaborative Care Android App',
-      description: 'Created an app revolutionizing behavioral and mental health care, featuring AES-256 encrypted messaging, WebSockets for real-time updates, and Firebase Cloud Messaging.',
+      title: 'Health Tracker App',
+      description: 'A mobile app design for tracking health metrics, exercises, and nutrition with personalized insights.',
       imageUrl: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-      images: [
-        'https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-        'https://images.unsplash.com/photo-1576671414121-aa2d60f2d2b5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-        'https://images.unsplash.com/photo-1551076805-e1869033e561?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
-      ],
-      category: ['ui-ux', 'frontend'],
-      technologies: ['Flutter', 'Dart', 'Android', 'Java', 'Firebase', 'WebSockets'],
+      category: ['ui-ux'],
+      technologies: ['Figma', 'Prototyping', 'UI Design'],
       completionLevel: 2,
-      link: 'https://play.google.com/store/apps/details?id=com.ub.colab_care&hl=en_US'
+      link: '/project/2'
     },
     {
       id: '3',
-      title: 'AI Institute Web App',
-      description: 'Led the design of a React.js frontend for The National AI Institute for Exceptional Education, improving accessibility by 40% for users with speech disabilities.',
+      title: 'Financial Advisory Platform',
+      description: 'A comprehensive web application for financial advisors to manage clients, investments, and generate reports.',
       imageUrl: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-      images: [
-        'https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-        'https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-        'https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
-      ],
       category: ['frontend', 'fullstack'],
-      technologies: ['React.js', 'Next.js', 'FastAPI', 'Python', 'Solr'],
+      technologies: ['Next.js', 'Node.js', 'MongoDB'],
       completionLevel: 3,
       link: '/project/3'
     }

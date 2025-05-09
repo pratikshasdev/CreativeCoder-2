@@ -14,8 +14,7 @@ export interface Project {
   id: string;
   title: string;
   description: string;
-  imageUrl: string; // Main image (for backward compatibility)
-  images: string[]; // Array of image URLs for the project
+  imageUrl: string;
   category: ProjectCategory[];
   technologies: string[];
   completionLevel: number; // 1-3 dots to show project completion
