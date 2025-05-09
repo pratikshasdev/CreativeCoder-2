@@ -93,7 +93,7 @@ export default function About() {
             {/* Social links */}
             <div className="flex gap-4">
               <motion.a 
-                href="https://github.com/pratiksha-shirsath" 
+                href="https://github.com/Pratiksha234" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-[var(--grey-light)] flex items-center justify-center hover:bg-[var(--blue-primary)] hover:text-white transition-colors cursor-link"
