@@ -3,7 +3,7 @@ export const designSkills = [
   { name: "Figma", percentage: 90 },
   { name: "Mobile App Design", percentage: 95 },
   { name: "Wireframing & Prototyping", percentage: 90 },
-  { name: "Web Design", percentage: 85 }
+  { name: "Web Design", percentage: 85 },
 ];
 
 export const devSkills = [
@@ -12,28 +12,143 @@ export const devSkills = [
   { name: "React.js", percentage: 90 },
   { name: "TypeScript/JavaScript", percentage: 85 },
   { name: "Swift/iOS", percentage: 80 },
-  { name: "Kotlin/Android", percentage: 85 }
+  { name: "Kotlin/Android", percentage: 85 },
 ];
 
 export const designTools = [
-  { name: "Figma", icon: "https://cdn.worldvectorlogo.com/logos/figma-1.svg" },
-  { name: "Android Studio", icon: "https://cdn.worldvectorlogo.com/logos/android-studio-1.svg" },
-  { name: "XCode", icon: "https://cdn.worldvectorlogo.com/logos/xcode-2.svg" },
-  { name: "VSCode", icon: "https://cdn.worldvectorlogo.com/logos/visual-studio-code-1.svg" },
-  { name: "Jira", icon: "https://cdn.worldvectorlogo.com/logos/jira-3.svg" }
+  {
+    name: "Figma",
+    icon: "https://cdn.worldvectorlogo.com/logos/figma-icon.svg",
+  },
+  {
+    name: "Adobe XD",
+    icon: "https://cdn.worldvectorlogo.com/logos/adobe-xd-2.svg",
+  },
+  {
+    name: "LottieFiles",
+    icon: "https://cdn.worldvectorlogo.com/logos/lottiefiles.svg",
+  },
+  {
+    name: "Canva",
+    icon: "https://cdn.worldvectorlogo.com/logos/canva-wordmark-2.svg",
+  },
+  {
+    name: "Zeplin",
+    icon: "https://cdn.worldvectorlogo.com/logos/zeplin.svg",
+  },
+  {
+    name: "Photoshop",
+    icon: "https://cdn.worldvectorlogo.com/logos/adobe-photoshop-2.svg",
+  },
+  {
+    name: "Android Studio",
+    icon: "https://cdn.worldvectorlogo.com/logos/android-studio-1.svg",
+  },
+  {
+    name: "VSCode",
+    icon: "https://cdn.worldvectorlogo.com/logos/visual-studio-code-1.svg",
+  },
+  {
+    name: "Jira",
+    icon: "https://cdn.worldvectorlogo.com/logos/jira-3.svg",
+  },
 ];
 
 export const techStack = [
-  { name: "React Native", icon: "https://cdn.worldvectorlogo.com/logos/react-native-1.svg" },
-  { name: "Flutter", icon: "https://cdn.worldvectorlogo.com/logos/flutter.svg" },
-  { name: "React.js", icon: "https://cdn.worldvectorlogo.com/logos/react-2.svg" },
-  { name: "TypeScript", icon: "https://cdn.worldvectorlogo.com/logos/typescript.svg" },
-  { name: "Next.js", icon: "https://cdn.worldvectorlogo.com/logos/next-js.svg" },
-  { name: "Redux", icon: "https://cdn.worldvectorlogo.com/logos/redux.svg" },
-  { name: "Firebase", icon: "https://cdn.worldvectorlogo.com/logos/firebase-1.svg" },
-  { name: "Node.js", icon: "https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg" },
-  { name: "MongoDB", icon: "https://cdn.worldvectorlogo.com/logos/mongodb-icon-1.svg" },
-  { name: "Dart", icon: "https://cdn.worldvectorlogo.com/logos/dart.svg" },
-  { name: "Swift", icon: "https://cdn.worldvectorlogo.com/logos/swift-15.svg" },
-  { name: "Kotlin", icon: "https://cdn.worldvectorlogo.com/logos/kotlin-1.svg" }
+  {
+    name: "React Native",
+    icon: "https://cdn.worldvectorlogo.com/logos/react-native-1.svg",
+  },
+  {
+    name: "Flutter",
+    icon: "https://cdn.worldvectorlogo.com/logos/flutter.svg",
+  },
+  {
+    name: "React.js",
+    icon: "https://cdn.worldvectorlogo.com/logos/react-2.svg",
+  },
+  {
+    name: "TypeScript",
+    icon: "https://cdn.worldvectorlogo.com/logos/typescript.svg",
+  },
+  {
+    name: "JavaScript",
+    icon: "https://cdn.worldvectorlogo.com/logos/javascript-2.svg",
+  },
+  {
+    name: "HTML5",
+    icon: "https://cdn.worldvectorlogo.com/logos/html-1.svg",
+  },
+  {
+    name: "CSS3",
+    icon: "https://cdn.worldvectorlogo.com/logos/css-3.svg",
+  },
+  {
+    name: "Tailwind CSS",
+    icon: "https://cdn.worldvectorlogo.com/logos/tailwindcss.svg",
+  },
+  {
+    name: "Sass",
+    icon: "https://cdn.worldvectorlogo.com/logos/sass-1.svg",
+  },
+  {
+    name: "Next.js",
+    icon: "https://cdn.worldvectorlogo.com/logos/next-js.svg",
+  },
+  {
+    name: "Redux",
+    icon: "https://cdn.worldvectorlogo.com/logos/redux.svg",
+  },
+  {
+    name: "Firebase",
+    icon: "https://cdn.worldvectorlogo.com/logos/firebase-1.svg",
+  },
+  {
+    name: "Node.js",
+    icon: "https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg",
+  },
+  {
+    name: "MongoDB",
+    icon: "https://cdn.worldvectorlogo.com/logos/mongodb-icon-1.svg",
+  },
+  {
+    name: "PostgreSQL",
+    icon: "https://cdn.worldvectorlogo.com/logos/postgresql.svg",
+  },
+  {
+    name: "Dart",
+    icon: "https://cdn.worldvectorlogo.com/logos/dart.svg",
+  },
+  {
+    name: "Swift",
+    icon: "https://cdn.worldvectorlogo.com/logos/swift-15.svg",
+  },
+  {
+    name: "Kotlin",
+    icon: "https://cdn.worldvectorlogo.com/logos/kotlin-1.svg",
+  },
+  {
+    name: "AWS",
+    icon: "https://cdn.worldvectorlogo.com/logos/aws-2.svg",
+  },
+  {
+    name: "Google Cloud",
+    icon: "https://cdn.worldvectorlogo.com/logos/google-cloud-1.svg",
+  },
+  {
+    name: "Microsoft Azure",
+    icon: "https://cdn.worldvectorlogo.com/logos/azure-2.svg",
+  },
+  {
+    name: "Git",
+    icon: "https://cdn.worldvectorlogo.com/logos/git-icon.svg",
+  },
+  {
+    name: "GitHub",
+    icon: "https://cdn.worldvectorlogo.com/logos/github-icon-1.svg",
+  },
+  {
+    name: "Figma",
+    icon: "https://cdn.worldvectorlogo.com/logos/figma-icon.svg",
+  },
 ];

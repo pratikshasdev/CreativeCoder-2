@@ -3,18 +3,30 @@ import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from "emailjs-com";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
   email: z.string().email({ message: "Please enter a valid email address." }),
-  subject: z.string().min(2, { message: "Subject must be at least 2 characters." }),
-  message: z.string().min(10, { message: "Message must be at least 10 characters." })
+  subject: z
+    .string()
+    .min(2, { message: "Subject must be at least 2 characters." }),
+  message: z
+    .string()
+    .min(10, { message: "Message must be at least 10 characters." }),
 });
 
 type FormValues = z.infer<typeof formSchema>;
@@ -22,31 +34,45 @@ type FormValues = z.infer<typeof formSchema>;
 const ContactSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
-  
+
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
       email: "",
       subject: "",
-      message: ""
-    }
+      message: "",
+    },
   });
 
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
+
+    const serviceID = "service_kjwoj2q";
+    const templateID = "template_g10jtck";
+    const publicKey = "iivFUqZ_CBQETWBWb";
+
+    const templateParams = {
+      from_name: data.name,
+      from_email: data.email,
+      subject: data.subject,
+      message: data.message,
+    };
+
     try {
-      await apiRequest("POST", "/api/contact", data);
+      await emailjs.send(serviceID, templateID, templateParams, publicKey);
+
       toast({
         title: "Message sent!",
         description: "Thank you for your message. I'll get back to you soon.",
         variant: "default",
       });
+
       form.reset();
     } catch (error) {
       toast({
         title: "Error",
-        description: "There was a problem sending your message. Please try again.",
+        description: "There was a problem sending your message.",
         variant: "destructive",
       });
     } finally {
@@ -57,7 +83,7 @@ const ContactSection = () => {
   return (
     <section id="contact" className="py-20">
       <div className="container mx-auto px-4">
-        <motion.div 
+        <motion.div
           className="flex flex-col items-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -66,13 +92,14 @@ const ContactSection = () => {
         >
           <h2 className="text-3xl md:text-4xl font-bold font-poppins mb-4 relative inline-block">
             Get In Touch
-            <span className="absolute bottom-0 left-0 w-full h-1 bg-[#FF9F1C] transform -translate-y-2"></span>
+            <span className="absolute top-12 left-0 w-full h-1 bg-[#FF9F1C] transform -translate-y-2"></span>
           </h2>
           <p className="text-gray-600 text-center max-w-2xl">
-            Let's talk about your project! Send me a message and I'll get back to you as soon as possible.
+            Let's talk about your project! Send me a message and I'll get back
+            to you as soon as possible.
           </p>
         </motion.div>
-        
+
         <div className="grid md:grid-cols-2 gap-12 items-start">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -81,74 +108,78 @@ const ContactSection = () => {
             transition={{ duration: 0.5 }}
           >
             <div className="bg-gray-50 p-8 rounded-xl shadow-sm">
-              <h3 className="text-2xl font-bold font-poppins mb-6">Contact Information</h3>
-              
+              <h3 className="text-2xl font-bold font-poppins mb-6">
+                Contact Information
+              </h3>
+
               <div className="space-y-6">
                 <div className="flex items-start">
-                  <div className="bg-primary bg-opacity-10 p-3 rounded-lg mr-4">
+                  <div className="bg-black bg-opacity-10 p-3 rounded-lg mr-4">
                     <i className="ri-map-pin-line text-xl text-primary"></i>
                   </div>
                   <div>
                     <h4 className="font-medium mb-1">Location</h4>
-                    <p className="text-gray-600">San Francisco, California, USA</p>
+                    <p className="text-gray-600">USA</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start">
-                  <div className="bg-primary bg-opacity-10 p-3 rounded-lg mr-4">
+                  <div className="bg-black bg-opacity-10 p-3 rounded-lg mr-4">
                     <i className="ri-mail-line text-xl text-primary"></i>
                   </div>
                   <div>
                     <h4 className="font-medium mb-1">Email</h4>
-                    <p className="text-gray-600">hello@janedoe.com</p>
+                    <p className="text-gray-600">pvshirsath2000@gmail.com</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start">
-                  <div className="bg-primary bg-opacity-10 p-3 rounded-lg mr-4">
+                  <div className="bg-black bg-opacity-10 p-3 rounded-lg mr-4">
                     <i className="ri-phone-line text-xl text-primary"></i>
                   </div>
                   <div>
                     <h4 className="font-medium mb-1">Phone</h4>
-                    <p className="text-gray-600">+1 (555) 123-4567</p>
+                    <p className="text-gray-600">+1 (716) 295-3470</p>
                   </div>
                 </div>
               </div>
-              
-              <h3 className="text-xl font-bold font-poppins mt-10 mb-4">Social Profiles</h3>
+
+              <h3 className="text-xl font-bold font-poppins mt-10 mb-4">
+                Social Profiles
+              </h3>
               <div className="flex space-x-4">
-                <a 
-                  href="https://github.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="bg-primary bg-opacity-10 p-3 rounded-lg text-primary hover:bg-primary hover:text-white transition-colors duration-300" 
+                <a
+                  href="https://github.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-black bg-opacity-10 p-3 rounded-lg text-primary hover:bg-primary hover:text-white transition-colors duration-300"
                   aria-label="GitHub"
                 >
                   <i className="ri-github-fill text-xl"></i>
                 </a>
-                <a 
-                  href="https://linkedin.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="bg-primary bg-opacity-10 p-3 rounded-lg text-primary hover:bg-primary hover:text-white transition-colors duration-300" 
+                <a
+                  href="https://linkedin.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-black bg-opacity-10 p-3 rounded-lg text-primary hover:bg-primary hover:text-white transition-colors duration-300"
                   aria-label="LinkedIn"
                 >
                   <i className="ri-linkedin-fill text-xl"></i>
                 </a>
-                <a 
-                  href="https://twitter.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="bg-primary bg-opacity-10 p-3 rounded-lg text-primary hover:bg-primary hover:text-white transition-colors duration-300" 
+                <a
+                  href="https://twitter.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-black bg-opacity-10 p-3 rounded-lg text-primary hover:bg-primary hover:text-white transition-colors duration-300"
                   aria-label="Twitter"
                 >
                   <i className="ri-twitter-fill text-xl"></i>
                 </a>
-                <a 
-                  href="https://dribbble.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="bg-primary bg-opacity-10 p-3 rounded-lg text-primary hover:bg-primary hover:text-white transition-colors duration-300" 
+                <a
+                  href="https://dribbble.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-black bg-opacity-10 p-3 rounded-lg text-primary hover:bg-primary hover:text-white transition-colors duration-300"
                   aria-label="Dribbble"
                 >
                   <i className="ri-dribbble-fill text-xl"></i>
@@ -156,7 +187,7 @@ const ContactSection = () => {
               </div>
             </div>
           </motion.div>
-          
+
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -164,9 +195,14 @@ const ContactSection = () => {
             transition={{ duration: 0.5 }}
           >
             <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="bg-white p-8 rounded-xl shadow-lg">
-                <h3 className="text-2xl font-bold font-poppins mb-6">Send Me a Message</h3>
-                
+              <form
+                onSubmit={form.handleSubmit(onSubmit)}
+                className="bg-white p-8 rounded-xl shadow-lg"
+              >
+                <h3 className="text-2xl font-bold font-poppins mb-6">
+                  Send Me a Message
+                </h3>
+
                 <div className="space-y-6">
                   <div className="grid grid-cols-2 gap-6">
                     <FormField
@@ -174,11 +210,13 @@ const ContactSection = () => {
                       name="name"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-sm font-medium text-gray-700">Name</FormLabel>
+                          <FormLabel className="text-sm font-medium text-gray-700">
+                            Name
+                          </FormLabel>
                           <FormControl>
-                            <Input 
-                              placeholder="Your name" 
-                              {...field} 
+                            <Input
+                              placeholder="Your name"
+                              {...field}
                               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition"
                             />
                           </FormControl>
@@ -191,12 +229,14 @@ const ContactSection = () => {
                       name="email"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-sm font-medium text-gray-700">Email</FormLabel>
+                          <FormLabel className="text-sm font-medium text-gray-700">
+                            Email
+                          </FormLabel>
                           <FormControl>
-                            <Input 
-                              type="email" 
-                              placeholder="Your email" 
-                              {...field} 
+                            <Input
+                              type="email"
+                              placeholder="Your email"
+                              {...field}
                               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition"
                             />
                           </FormControl>
@@ -205,17 +245,19 @@ const ContactSection = () => {
                       )}
                     />
                   </div>
-                  
+
                   <FormField
                     control={form.control}
                     name="subject"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-sm font-medium text-gray-700">Subject</FormLabel>
+                        <FormLabel className="text-sm font-medium text-gray-700">
+                          Subject
+                        </FormLabel>
                         <FormControl>
-                          <Input 
-                            placeholder="Subject" 
-                            {...field} 
+                          <Input
+                            placeholder="Subject"
+                            {...field}
                             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition"
                           />
                         </FormControl>
@@ -223,18 +265,20 @@ const ContactSection = () => {
                       </FormItem>
                     )}
                   />
-                  
+
                   <FormField
                     control={form.control}
                     name="message"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-sm font-medium text-gray-700">Message</FormLabel>
+                        <FormLabel className="text-sm font-medium text-gray-700">
+                          Message
+                        </FormLabel>
                         <FormControl>
-                          <Textarea 
-                            placeholder="Your message" 
-                            rows={5} 
-                            {...field} 
+                          <Textarea
+                            placeholder="Your message"
+                            rows={5}
+                            {...field}
                             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition resize-none"
                           />
                         </FormControl>
@@ -242,10 +286,10 @@ const ContactSection = () => {
                       </FormItem>
                     )}
                   />
-                  
-                  <Button 
-                    type="submit" 
-                    className="w-full bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 transition-colors duration-300 flex items-center justify-center"
+
+                  <Button
+                    type="submit"
+                    className="w-full bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 transition-colors duration-300 flex items-center justify-center"
                     disabled={isSubmitting}
                   >
                     <span>Send Message</span>

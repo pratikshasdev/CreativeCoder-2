@@ -9,26 +9,28 @@ const CursorEffect = () => {
     const mouseMove = (e: MouseEvent) => {
       setMousePosition({
         x: e.clientX,
-        y: e.clientY
+        y: e.clientY,
       });
     };
 
     window.addEventListener("mousemove", mouseMove);
 
     // Add event listeners for interactive elements
-    const interactiveElements = document.querySelectorAll('a, button, input, textarea');
-    
+    const interactiveElements = document.querySelectorAll(
+      "a, button, input, textarea",
+    );
+
     const mouseEnterInteractive = () => setCursorVariant("interactive");
     const mouseLeaveInteractive = () => setCursorVariant("default");
 
-    interactiveElements.forEach(element => {
+    interactiveElements.forEach((element) => {
       element.addEventListener("mouseenter", mouseEnterInteractive);
       element.addEventListener("mouseleave", mouseLeaveInteractive);
     });
 
     return () => {
       window.removeEventListener("mousemove", mouseMove);
-      interactiveElements.forEach(element => {
+      interactiveElements.forEach((element) => {
         element.removeEventListener("mouseenter", mouseEnterInteractive);
         element.removeEventListener("mouseleave", mouseLeaveInteractive);
       });
@@ -40,18 +42,18 @@ const CursorEffect = () => {
       x: mousePosition.x - 16,
       y: mousePosition.y - 16,
       backgroundColor: "#6C63FF",
-      scale: 1
+      scale: 1,
     },
     interactive: {
       x: mousePosition.x - 16,
       y: mousePosition.y - 16,
       backgroundColor: "#FF9F1C",
-      scale: 1.5
-    }
+      scale: 1.5,
+    },
   };
 
   // Only show on large screens
-  if (typeof window !== 'undefined' && window.innerWidth < 1024) {
+  if (typeof window !== "undefined" && window.innerWidth < 1024) {
     return null;
   }
 
