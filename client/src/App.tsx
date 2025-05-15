@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import CursorEffect from "@/components/CursorEffect";
+import { Analytics } from "@vercel/analytics/next"
 
 function Router() {
   return (
@@ -21,6 +22,8 @@ function App() {
       <CursorEffect />
       <Router />
       <Toaster />
+      <Analytics />
+
     </QueryClientProvider>
   );
 }
