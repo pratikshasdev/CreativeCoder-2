@@ -17,7 +17,7 @@ const Navbar = () => {
 
   const handleDownloadCV = () => {
     const link = document.createElement("a");
-    link.href = "/Resume_Pratiksha_SM.pdf";
+    link.href = "/Pratiksha_Shirsath_Resume.pdf";
     link.download = "Pratiksha-Shirsath-Resume.pdf";
     link.click();
   };
@@ -52,6 +52,13 @@ const Navbar = () => {
             onClick={closeMenu}
           >
             About
+          </a>
+          <a
+            href="#experience"
+            className="nav-link text-dark hover:text-primary transition-colors duration-300 font-medium"
+            onClick={closeMenu}
+          >
+            Experience
           </a>
           <a
             href="#projects"
@@ -117,6 +124,13 @@ const Navbar = () => {
             onClick={closeMenu}
           >
             About
+          </a>
+          <a
+            href="#experience"
+            className="text-dark hover:text-primary transition-colors duration-300 font-medium"
+            onClick={closeMenu}
+          >
+            Experience
           </a>
           <a
             href="#projects"

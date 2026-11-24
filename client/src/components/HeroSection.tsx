@@ -47,23 +47,21 @@ const HeroSection = () => {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-poppins mb-4 leading-tight">
             I'm <span className="text-primary">Pratiksha Shirsath</span>,<br />
             <span className="relative">
-              Software
+              Mobile App
               <span className="absolute bottom-3 left-0 w-full h-1 bg-[#FF9F1C]"></span>
             </span>{" "}
-            <span className="relative">
-              Designer
-              <span className="absolute bottom-3 left-0 w-full h-1 bg-[#FF9F1C]"></span>
-            </span>{" "}
-            &{" "}
             <span className="relative">
               Developer
               <span className="absolute bottom-3 left-0 w-full h-1 bg-[#FF9F1C]"></span>
             </span>
           </h1>
+          <p className="text-xl font-medium text-[#2D3047] mb-4">
+            Senior Software Engineer at SCAE | iOS, Android and React Native
+          </p>
           <p className="text-gray-600 text-lg mb-8 leading-relaxed">
-            I craft beautiful, intuitive interfaces and transform them into
-            performant, responsive code that delivers exceptional user
-            experiences.
+            I build and ship native and cross-platform mobile apps, from Kotlin
+            and Jetpack Compose infotainment apps to Swift, SwiftUI and React
+            Native apps on the App Store and Google Play.
           </p>
           <div className="flex flex-wrap gap-4">
             <motion.a
@@ -84,7 +82,7 @@ const HeroSection = () => {
 
           <div className="mt-12 flex items-center space-x-6">
             <a
-              href="https://github.com/Pratiksha234"
+              href="https://github.com/pratikshasdev"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-600 hover:text-primary transition-colors duration-300"

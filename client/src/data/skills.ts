@@ -15,45 +15,6 @@ export const devSkills = [
   { name: "Kotlin/Android", percentage: 85 },
 ];
 
-export const designTools = [
-  {
-    name: "Figma",
-    icon: "https://cdn.worldvectorlogo.com/logos/figma-icon.svg",
-  },
-  {
-    name: "Adobe XD",
-    icon: "https://cdn.worldvectorlogo.com/logos/adobe-xd-2.svg",
-  },
-  {
-    name: "LottieFiles",
-    icon: "https://cdn.worldvectorlogo.com/logos/lottiefiles.svg",
-  },
-  {
-    name: "Canva",
-    icon: "https://cdn.worldvectorlogo.com/logos/canva-wordmark-2.svg",
-  },
-  {
-    name: "Zeplin",
-    icon: "https://cdn.worldvectorlogo.com/logos/zeplin.svg",
-  },
-  {
-    name: "Photoshop",
-    icon: "https://cdn.worldvectorlogo.com/logos/adobe-photoshop-2.svg",
-  },
-  {
-    name: "Android Studio",
-    icon: "https://cdn.worldvectorlogo.com/logos/android-studio-1.svg",
-  },
-  {
-    name: "VSCode",
-    icon: "https://cdn.worldvectorlogo.com/logos/visual-studio-code-1.svg",
-  },
-  {
-    name: "Jira",
-    icon: "https://cdn.worldvectorlogo.com/logos/jira-3.svg",
-  },
-];
-
 export const techStack = [
   {
     name: "React Native",
@@ -74,22 +35,6 @@ export const techStack = [
   {
     name: "JavaScript",
     icon: "https://cdn.worldvectorlogo.com/logos/javascript-2.svg",
-  },
-  {
-    name: "HTML5",
-    icon: "https://cdn.worldvectorlogo.com/logos/html-1.svg",
-  },
-  {
-    name: "CSS3",
-    icon: "https://cdn.worldvectorlogo.com/logos/css-3.svg",
-  },
-  {
-    name: "Tailwind CSS",
-    icon: "https://cdn.worldvectorlogo.com/logos/tailwindcss.svg",
-  },
-  {
-    name: "Sass",
-    icon: "https://cdn.worldvectorlogo.com/logos/sass-1.svg",
   },
   {
     name: "Next.js",
@@ -132,10 +77,6 @@ export const techStack = [
     icon: "https://cdn.worldvectorlogo.com/logos/aws-2.svg",
   },
   {
-    name: "Google Cloud",
-    icon: "https://cdn.worldvectorlogo.com/logos/google-cloud-1.svg",
-  },
-  {
     name: "Microsoft Azure",
     icon: "https://cdn.worldvectorlogo.com/logos/azure-2.svg",
   },
@@ -148,7 +89,75 @@ export const techStack = [
     icon: "https://cdn.worldvectorlogo.com/logos/github-icon-1.svg",
   },
   {
+    name: "Android Studio",
+    icon: "https://cdn.worldvectorlogo.com/logos/android-studio-1.svg",
+  },
+  {
     name: "Figma",
     icon: "https://cdn.worldvectorlogo.com/logos/figma-icon.svg",
+  },
+];
+
+export const skillGroups = [
+  {
+    name: "Mobile",
+    icon: "ri-smartphone-line",
+    skills: [
+      "Kotlin",
+      "Jetpack Compose",
+      "Swift",
+      "SwiftUI",
+      "React Native",
+      "Flutter",
+      "Dart",
+      "Java",
+    ],
+  },
+  {
+    name: "Languages and Web",
+    icon: "ri-code-s-slash-line",
+    skills: ["TypeScript", "JavaScript", "Python", "React.js", "Redux"],
+  },
+  {
+    name: "Backend and Cloud",
+    icon: "ri-cloud-line",
+    skills: [
+      "Node.js",
+      "Spring Boot",
+      "GraphQL",
+      "Firebase",
+      "AWS",
+      "Microsoft Azure",
+      "PostgreSQL",
+      "MongoDB",
+    ],
+  },
+  {
+    name: "Testing and Delivery",
+    icon: "ri-checkbox-circle-line",
+    skills: [
+      "JUnit",
+      "Espresso",
+      "XCTest",
+      "Jest",
+      "pytest",
+      "GitHub Actions",
+      "Fastlane",
+      "Docker",
+      "Git",
+    ],
+  },
+  {
+    name: "Tools",
+    icon: "ri-tools-line",
+    skills: [
+      "Android Studio",
+      "Xcode",
+      "VS Code",
+      "Figma",
+      "Jira",
+      "Claude Code",
+      "GitHub Copilot",
+    ],
   },
 ];

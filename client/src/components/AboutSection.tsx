@@ -16,8 +16,8 @@ const AboutSection = () => {
             <span className="absolute top-12 left-0 w-full h-1 bg-[#FF9F1C] transform -translate-y-2"></span>
           </h2>
           <p className="text-gray-600 text-center max-w-2xl">
-            Get to know me a little better - who I am, what I do, and why I love
-            designing and developing amazing digital experiences.
+            Get to know me a little better: who I am, what I build, and how I
+            work.
           </p>
         </motion.div>
 
@@ -32,7 +32,7 @@ const AboutSection = () => {
             <div className="w-full h-full absolute top-4 left-4 border-2 border-primary rounded-lg -z-10"></div>
             <img
               src="https://res.cloudinary.com/dsthkuuxz/image/upload/v1746811307/ChatGPT_Image_May_9_2025_01_17_50_PM_cdgib2.png"
-              alt="Jane working at desk with computer"
+              alt="Pratiksha Shirsath at work"
               className="rounded-lg shadow-lg w-full object-cover h-96 md:h-auto"
             />
           </motion.div>
@@ -44,17 +44,24 @@ const AboutSection = () => {
             transition={{ duration: 0.6 }}
           >
             <h3 className="text-2xl font-bold font-poppins mb-4">
-              A passionate Software - Mobile and Web Developer
+              Mobile App Developer: iOS, Android and React Native
             </h3>
             <p className="text-gray-600 mb-4 leading-relaxed">
-              With over 3 years of experience, I combine creative design
-              thinking with technical expertise to build beautiful, functional
-              websites and mobile applications. I'm passionate about creating
-              intuitive interfaces that solve real problems.
+              I'm a mobile app developer with 4+ years of experience designing,
+              building, testing and shipping iOS, Android and React Native apps
+              across automotive, healthcare and consumer products.
+            </p>
+            <p className="text-gray-600 mb-4 leading-relaxed">
+              Today I'm a Senior Software Engineer at Sumitomo Corporate
+              Automotive Engineering (SCAE) in Novi, MI, building Python test
+              automation for Yamaha embedded displays. Before that I built
+              Kotlin and Jetpack Compose infotainment apps for North American
+              Subaru, and earlier shipped 6+ App Store and Google Play releases
+              with Swift, SwiftUI and React Native.
             </p>
             <p className="text-gray-600 mb-6 leading-relaxed">
-              I specialize in responsive design, interactive prototyping, and
-              writing clean, efficient code.
+              I care about modular architecture, clean state management,
+              test-driven development and CI/CD.
             </p>
 
             <div className="grid grid-cols-2 gap-4 mb-8">
@@ -63,14 +70,21 @@ const AboutSection = () => {
                   <i className="ri-user-3-line text-primary mr-2"></i>
                   <span className="font-medium">Experience:</span>
                 </div>
-                <p className="text-gray-600 ml-6">3+ Years</p>
+                <p className="text-gray-600 ml-6">4+ Years</p>
               </div>
               <div>
                 <div className="flex items-center mb-2">
                   <i className="ri-mail-line text-primary mr-2"></i>
                   <span className="font-medium">Email:</span>
                 </div>
-                <p className="text-gray-600 ml-6">pvshirsath2000@gmail.com</p>
+                <p className="text-gray-600 ml-6">pratiksha.sdev@gmail.com</p>
+              </div>
+              <div>
+                <div className="flex items-center mb-2">
+                  <i className="ri-map-pin-line text-primary mr-2"></i>
+                  <span className="font-medium">Location:</span>
+                </div>
+                <p className="text-gray-600 ml-6">Canton, MI</p>
               </div>
               <div>
                 <div className="flex items-center mb-2">
@@ -83,22 +97,22 @@ const AboutSection = () => {
 
             <div className="flex flex-wrap gap-3">
               <span className="bg-black bg-opacity-10 text-primary px-4 py-2 rounded-full text-sm">
+                Kotlin
+              </span>
+              <span className="bg-black bg-opacity-10 text-primary px-4 py-2 rounded-full text-sm">
+                Jetpack Compose
+              </span>
+              <span className="bg-black bg-opacity-10 text-primary px-4 py-2 rounded-full text-sm">
+                Swift
+              </span>
+              <span className="bg-black bg-opacity-10 text-primary px-4 py-2 rounded-full text-sm">
+                SwiftUI
+              </span>
+              <span className="bg-black bg-opacity-10 text-primary px-4 py-2 rounded-full text-sm">
                 React Native
               </span>
               <span className="bg-black bg-opacity-10 text-primary px-4 py-2 rounded-full text-sm">
-                Frontend Development
-              </span>
-              <span className="bg-black bg-opacity-10 text-primary px-4 py-2 rounded-full text-sm">
-                React
-              </span>
-              <span className="bg-black bg-opacity-10 text-primary px-4 py-2 rounded-full text-sm">
                 Flutter
-              </span>
-              <span className="bg-black bg-opacity-10 text-primary px-4 py-2 rounded-full text-sm">
-                Angular
-              </span>
-              <span className="bg-black bg-opacity-10 text-primary px-4 py-2 rounded-full text-sm">
-                UI/UX Design
               </span>
               <span className="bg-black bg-opacity-10 text-primary px-4 py-2 rounded-full text-sm">
                 Android

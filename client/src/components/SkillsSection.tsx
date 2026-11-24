@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import ProgressBar from "./ProgressBar";
-import { designSkills, devSkills, designTools, techStack } from "@/data/skills";
+import { skillGroups, techStack } from "@/data/skills";
 import FloatingTech from "./ui/floating-tech";
 
 const SkillsSection = () => {
@@ -27,58 +26,32 @@ const SkillsSection = () => {
         {/* Floating Tech Skills */}
         <FloatingTech technologies={techStack} />
 
-        <div className="grid md:grid-cols-2 gap-16">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <h4 className="text-xl font-medium font-poppins mt-10 mb-4 text-[var(--blue-secondary)]">
-              Design Tools
-            </h4>
-            <div className="flex flex-wrap gap-4">
-              {designTools.map((tool) => (
-                <div
-                  key={tool.name}
-                  className="flex items-center bg-white p-3 rounded-lg shadow-sm border border-[var(--grey-medium)]"
-                >
-                  <img
-                    src={tool.icon}
-                    alt={tool.name}
-                    className="w-6 h-6 mr-2"
-                  />
-                  <span className="text-[var(--grey-dark)]">{tool.name}</span>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <h4 className="text-xl font-medium font-poppins mt-10 mb-4 text-[var(--blue-secondary)]">
-              Tech Stack
-            </h4>
-            <div className="flex flex-wrap gap-4">
-              {techStack.map((tech) => (
-                <div
-                  key={tech.name}
-                  className="flex items-center bg-white p-3 rounded-lg shadow-sm border border-[var(--grey-medium)]"
-                >
-                  <img
-                    src={tech.icon}
-                    alt={tech.name}
-                    className="w-6 h-6 mr-2"
-                  />
-                  <span className="text-[var(--grey-dark)]">{tech.name}</span>
-                </div>
-              ))}
-            </div>
-          </motion.div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {skillGroups.map((group, index) => (
+            <motion.div
+              key={group.name}
+              className="bg-white p-6 rounded-xl shadow-sm border border-[var(--grey-medium)]"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: index * 0.05 }}
+            >
+              <h4 className="text-xl font-medium font-poppins mb-4 text-[var(--blue-secondary)] flex items-center">
+                <i className={`${group.icon} text-primary mr-2`}></i>
+                {group.name}
+              </h4>
+              <div className="flex flex-wrap gap-2">
+                {group.skills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="bg-black bg-opacity-5 text-[var(--grey-dark)] px-3 py-1 rounded-full text-sm"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

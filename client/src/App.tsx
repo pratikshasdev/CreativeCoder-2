@@ -5,7 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import CursorEffect from "@/components/CursorEffect";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/react";
 
 function Router() {
   return (
