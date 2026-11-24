@@ -26,6 +26,12 @@ const Footer = () => {
               About
             </a>
             <a
+              href="#experience"
+              className="text-gray-300 hover:text-primary transition-colors duration-300"
+            >
+              Experience
+            </a>
+            <a
               href="#projects"
               className="text-gray-300 hover:text-primary transition-colors duration-300"
             >
@@ -56,7 +62,7 @@ const Footer = () => {
 
           <div className="flex space-x-4">
             <a
-              href="https://github.com/Pratiksha234"
+              href="https://github.com/pratikshasdev"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-primary transition-colors duration-300"

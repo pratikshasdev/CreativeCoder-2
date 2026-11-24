@@ -4,9 +4,9 @@ import { projects } from "@/data/projects";
 
 const categories = [
   { id: "all", name: "All" },
-  { id: "ux-design", name: "UX Design" },
-  { id: "ui-design", name: "UI Design" },
-  { id: "development", name: "Development" }
+  { id: "mobile", name: "Mobile" },
+  { id: "web", name: "Web" },
+  { id: "ai", name: "AI & Data" }
 ];
 
 const ProjectCard = ({ project }) => {
@@ -122,12 +122,18 @@ const ProjectCard = ({ project }) => {
                 </>
               )}
             </>
-          ) : (
+          ) : project.image ? (
             <img
               src={project.image}
               alt={project.title}
               className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
             />
+          ) : (
+            <div className="w-full h-full bg-gradient flex items-center justify-center p-6">
+              <span className="text-white text-2xl font-bold font-poppins text-center">
+                {project.title}
+              </span>
+            </div>
           )}
         </div>
         <div className="absolute top-4 right-4 bg-white rounded-full px-3 py-1 text-xs font-medium text-primary">
@@ -144,14 +150,16 @@ const ProjectCard = ({ project }) => {
             </span>
           ))}
         </div>
-        <a 
-          href={project.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-primary font-medium inline-flex items-center hover:underline"
-        >
-          View Project <i className="ri-arrow-right-line ml-1"></i>
-        </a>
+        {project.link && (
+          <a 
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary font-medium inline-flex items-center hover:underline"
+          >
+            View Project <i className="ri-arrow-right-line ml-1"></i>
+          </a>
+        )}
       </div>
     </motion.div>
   );
@@ -209,11 +217,12 @@ const ProjectsSection = () => {
         
         <div className="text-center mt-12">
           <a
-            href="#"
+            href="https://github.com/pratikshasdev"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center text-primary font-medium hover:underline text-lg"
-            onClick={(e) => e.preventDefault()}
           >
-            View All Projects <i className="ri-arrow-right-line ml-1"></i>
+            View All Projects on GitHub <i className="ri-arrow-right-line ml-1"></i>
           </a>
         </div>
       </div>

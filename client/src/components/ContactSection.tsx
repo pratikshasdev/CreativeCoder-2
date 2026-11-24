@@ -95,8 +95,8 @@ const ContactSection = () => {
             <span className="absolute top-12 left-0 w-full h-1 bg-[#FF9F1C] transform -translate-y-2"></span>
           </h2>
           <p className="text-gray-600 text-center max-w-2xl">
-            Let's talk about your project! Send me a message and I'll get back
-            to you as soon as possible.
+            I'm open to full-time and contract mobile roles. Send me a message
+            and I'll get back to you as soon as possible.
           </p>
         </motion.div>
 
@@ -119,7 +119,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="font-medium mb-1">Location</h4>
-                    <p className="text-gray-600">USA</p>
+                    <p className="text-gray-600">Canton, MI</p>
                   </div>
                 </div>
 
@@ -129,7 +129,12 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="font-medium mb-1">Email</h4>
-                    <p className="text-gray-600">pvshirsath2000@gmail.com</p>
+                    <a
+                      href="mailto:pratiksha.sdev@gmail.com"
+                      className="text-gray-600 hover:text-primary"
+                    >
+                      pratiksha.sdev@gmail.com
+                    </a>
                   </div>
                 </div>
 
@@ -149,7 +154,7 @@ const ContactSection = () => {
               </h3>
               <div className="flex space-x-4">
                 <a
-                  href="https://github.com"
+                  href="https://github.com/pratikshasdev"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-black bg-opacity-10 p-3 rounded-lg text-primary hover:bg-primary hover:text-white transition-colors duration-300"
@@ -158,31 +163,13 @@ const ContactSection = () => {
                   <i className="ri-github-fill text-xl"></i>
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://linkedin.com/in/pratiksha-shirsath"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-black bg-opacity-10 p-3 rounded-lg text-primary hover:bg-primary hover:text-white transition-colors duration-300"
                   aria-label="LinkedIn"
                 >
                   <i className="ri-linkedin-fill text-xl"></i>
-                </a>
-                <a
-                  href="https://twitter.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-black bg-opacity-10 p-3 rounded-lg text-primary hover:bg-primary hover:text-white transition-colors duration-300"
-                  aria-label="Twitter"
-                >
-                  <i className="ri-twitter-fill text-xl"></i>
-                </a>
-                <a
-                  href="https://dribbble.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-black bg-opacity-10 p-3 rounded-lg text-primary hover:bg-primary hover:text-white transition-colors duration-300"
-                  aria-label="Dribbble"
-                >
-                  <i className="ri-dribbble-fill text-xl"></i>
                 </a>
               </div>
             </div>
