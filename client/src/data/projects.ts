@@ -12,6 +12,25 @@ interface Project {
 
 export const projects: Project[] = [
   {
+    id: 10,
+    title: "Clinic Intake Assistant",
+    description:
+      "Patients check in on their phone in their own words. Claude turns the answers into coded FHIR R4 records (allergies, medications, conditions), and the front desk approves each item against the patient's own words. Synthetic patients only, with a hand-labelled eval set and CI.",
+    categories: ["mobile", "web", "ai"],
+    categoryLabel: "AI and Healthcare",
+    technologies: [
+      "Expo",
+      "React Native",
+      "React",
+      "TypeScript",
+      "FastAPI",
+      "Python",
+      "Claude API",
+      "FHIR R4",
+    ],
+    link: "https://github.com/pratikshasdev/clinic-intake-assistant",
+  },
+  {
     id: 1,
     title: "DQS Direct Mobile App",
     description:
